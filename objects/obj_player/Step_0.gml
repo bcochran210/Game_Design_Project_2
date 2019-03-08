@@ -61,6 +61,20 @@ if(place_meeting(x, y + y_spd, obj_block)){
 	y_spd = 0;
 }
 
+if(sprite_index = spr_player_sword_attack){
+	if(place_meeting(x - 64, y, obj_enemySlime)){
+		player_health -= 1;
+		x -= 5;
+		y -= 5;
+	}
+} else {
+	if(place_meeting(x, y, obj_enemySlime)){
+		player_health -= 1;
+		x -= 5;
+		y -= 5;
+	}
+}
+
 //Jump
 if(place_meeting(x, y + 1, obj_block) && (key_up)){
 	y_spd = -jumpSpd;
@@ -68,7 +82,7 @@ if(place_meeting(x, y + 1, obj_block) && (key_up)){
 
 //Mining
 /*Located withing block code*/
-if(mouse_check_button_pressed(mb_left) && distance_to_point(obj_player.x + (64 * 3), obj_player.y + (64 * 3))){
+if(mouse_check_button_pressed(mb_left)){
 	instance_create_depth(mouse_x, mouse_y, 0, obj_miningHitBox);
 }
 
@@ -121,6 +135,12 @@ if(mouse_check_button_pressed(mb_right) && place_free(mouse_x + 32, mouse_y + 32
 		}
 	}
 	obj_controller.dirt_block_held--;
+}
+
+//Developer Keys
+/*Restart Game*/
+if(keyboard_check_pressed(ord("R"))){
+	game_restart();
 }
 
 //Update movement

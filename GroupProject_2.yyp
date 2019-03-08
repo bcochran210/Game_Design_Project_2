@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "0c1c440e-b7c2-4c5e-99f7-9c9562b822ff",
+            "Value": {
+                "id": "197bf9eb-1105-4f30-b836-30da0dfeab8b",
+                "resourcePath": "objects\\obj_ore_gold\\obj_ore_gold.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "104cb96a-ecb0-452e-9400-3af5efd009f2",
             "Value": {
                 "id": "32c5549c-6a45-49ed-8278-936f50efb2bf",
@@ -127,10 +135,26 @@
             }
         },
         {
+            "Key": "2acdfa0b-d0cd-4d58-8c57-3c61c5936b71",
+            "Value": {
+                "id": "69431212-cc98-49c2-b0b9-8511c6e40ef6",
+                "resourcePath": "objects\\obj_ore\\obj_ore.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2c100faa-8282-40db-9089-0bebdad35e3d",
             "Value": {
                 "id": "55c13177-758d-47f4-bed4-8af9b58bff78",
                 "resourcePath": "objects\\obj_dirtPickUp\\obj_dirtPickUp.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "3373e7ae-9c92-417a-acc6-78a6c9162aa4",
+            "Value": {
+                "id": "e860d58e-e4ab-4a34-9c76-0d8b843f74de",
+                "resourcePath": "objects\\obj_ore_diamond\\obj_ore_diamond.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -143,10 +167,18 @@
             }
         },
         {
+            "Key": "3d0cb60f-c7b2-4307-96dd-cf2e58fc5d3a",
+            "Value": {
+                "id": "1bc40b0b-7bf0-45b0-9958-0042b569d58a",
+                "resourcePath": "objects\\obj_ore_copper\\obj_ore_copper.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "42e871aa-12fc-439d-8896-d205e77d8d27",
             "Value": {
                 "id": "d2c1854c-3437-4dcb-826f-c69e41a9fbeb",
-                "resourcePath": "objects\\obj_enemy\\obj_enemy.yy",
+                "resourcePath": "objects\\obj_enemySlime\\obj_enemySlime.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -164,6 +196,14 @@
                 "id": "70eeb03e-6a28-4853-8912-ea165b6b471d",
                 "resourcePath": "views\\5a7a056b-3a8f-4687-bb88-b798d3afb8a9.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5ca233a6-0136-4740-b5ea-2eb973995274",
+            "Value": {
+                "id": "6a5ed26b-14ae-4cea-8cd6-b62469af7332",
+                "resourcePath": "objects\\obj_ore_coal\\obj_ore_coal.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -271,6 +311,14 @@
             }
         },
         {
+            "Key": "88cfef85-b50e-4fd1-bf6b-e7043ff217f4",
+            "Value": {
+                "id": "686f70ad-0c4c-4525-96b7-de288ff559d1",
+                "resourcePath": "views\\88cfef85-b50e-4fd1-bf6b-e7043ff217f4.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "8a82d147-7e44-4e4b-8eae-75ef79374f15",
             "Value": {
                 "id": "d39600ef-b1d3-47b3-a68e-aa3c69a76491",
@@ -327,6 +375,14 @@
             }
         },
         {
+            "Key": "9836f955-1a41-49c3-9d8e-fc5c060c0176",
+            "Value": {
+                "id": "dced221c-a21d-4c64-b2d1-ca51f045bb69",
+                "resourcePath": "views\\9836f955-1a41-49c3-9d8e-fc5c060c0176.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "9a9ffd19-991e-40b4-b2c5-257f54334c4f",
             "Value": {
                 "id": "f0a51c27-61ad-4c52-8c90-1745e59320da",
@@ -380,6 +436,14 @@
                 "id": "462513f8-af95-421b-aa65-e9878d9b3256",
                 "resourcePath": "views\\b45f041f-3790-4efb-8b7c-4810327f4fef.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "bdf156e5-75d6-47fe-a05e-f616fb57ff17",
+            "Value": {
+                "id": "bc259380-5431-42cf-9775-5fcd2ce15f93",
+                "resourcePath": "objects\\obj_ore_iron\\obj_ore_iron.yy",
+                "resourceType": "GMObject"
             }
         },
         {

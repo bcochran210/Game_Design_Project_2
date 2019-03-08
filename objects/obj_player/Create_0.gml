@@ -12,3 +12,5 @@ arrow_drawn = true;
 charge_level = "0";
 sword_material = "wood";
 axe_material = "wood";
+player_health = 100;
+canTakeDamage = true;

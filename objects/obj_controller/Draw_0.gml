@@ -10,5 +10,8 @@ draw_text(x_view + 700, y_view + 625, "Log: " + string_digits(obj_controller.log
 
 if(obj_player.playerState = "bow"){
 	draw_text(x_view + 16, y_view + 650, "Arrows: " + string_digits(obj_controller.arrow_count));
-	draw_text(x_view + 16, y_view + 700, "Drawn: " + string(obj_player.arrow_drawn));
+	draw_text(x_view + 16, y_view + 675, "Drawn: " + string(obj_player.arrow_drawn));
 }
+
+//Draw Health
+draw_healthbar(x_view + 16, y_view + 700, x_view + 1000, y_view + 725, obj_player.player_health, c_black, c_red, c_green, 0, false, false);
