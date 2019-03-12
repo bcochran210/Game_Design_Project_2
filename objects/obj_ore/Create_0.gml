@@ -1,16 +1,19 @@
 randomize();
-oreNum = irandom_range(1,30);
-oreType = "";
+oreNum = irandom_range(1, 10);
 
 
-if(oreNum > 0 && oreNum < 11){
-	oreType = "coal";
-} else if (oreNum > 11 && oreNum < 19){
-	oreType = "copper";
-} else if (oreNum > 19 && oreNum < 25){
-	oreType = "iron";
-} else if (oreNum > 25 && oreNum < 29){
-	oreType = "gold";
-} else {
-	oreType = "diamond";
+if (oreNum = 1 || oreNum = 2 || oreNum = 3 || oreNum = 4) {
+	instance_change(obj_ore_coal, true);
+} 
+if (oreNum = 5 || oreNum = 6) {
+	instance_change(obj_ore_copper, true);
+} 
+if (oreNum = 7 || oreNum = 8) {
+	instance_change(obj_ore_iron, true);
+} 
+if (oreNum = 9) {
+	instance_change(obj_ore_gold, true);
+} 
+if (oreNum = 10) {
+	instance_change(obj_ore_diamond, true);
 }

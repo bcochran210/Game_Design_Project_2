@@ -7,7 +7,9 @@
         "388a79c5-4866-4c98-a09e-303e6c991577",
         "e5d854d9-a5fa-406b-8761-a198d1b56111",
         "03890165-c33d-4384-a61c-4013cb119d96",
-        "5fc600ce-3ee4-45b2-b176-736d03db8614"
+        "5fc600ce-3ee4-45b2-b176-736d03db8614",
+        "ddf632b4-0e54-4d14-87fd-660542481eec",
+        "f59d31da-d0e7-4034-bc50-76f154dd7757"
     ],
     "filterType": "GMSprite",
     "folderName": "Basic Blocks",

@@ -4,7 +4,26 @@
     "mvc": "1.0",
     "name": "obj_ore_coal",
     "eventList": [
-        
+        {
+            "id": "9f0a50c3-677f-4b27-ab19-ad1834992ab9",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 1,
+            "m_owner": "5ca233a6-0136-4740-b5ea-2eb973995274"
+        },
+        {
+            "id": "88f203cf-cdfc-4ee6-b2a8-e8208115ee70",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
+            "m_owner": "5ca233a6-0136-4740-b5ea-2eb973995274"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

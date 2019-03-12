@@ -5,6 +5,3 @@ if(obj_player.playerState = "mine"){
 	}
 }
 
-if(!position_meeting(x + 32, y + 32, obj_block) && !position_meeting(x - 32, y - 32, obj_block)){
-	gravity = 1;
-}

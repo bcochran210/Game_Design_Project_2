@@ -8,7 +8,8 @@
         "0354eba8-4a27-4801-9b2c-de59ffe4f61b",
         "6ee3ec09-4399-441d-89f5-108bf654ae88",
         "c1bcdbc9-8dc5-4049-a939-35ce5124ce66",
-        "011b22f6-2792-471d-bae6-a694b65aac4c"
+        "011b22f6-2792-471d-bae6-a694b65aac4c",
+        "cd4ae9fb-720b-40f4-aec7-1369a1ccef5c"
     ],
     "filterType": "GMSprite",
     "folderName": "Ores",
