@@ -1,4 +1,4 @@
-switch obj_player.sword_material {
+switch obj_controller.sword_material {
 	case "wood": {
 		enemy_health -= 10;
 	}
@@ -15,3 +15,4 @@ switch obj_player.sword_material {
 		enemy_health -= 30;
 	}
 }
+instance_destroy(other);

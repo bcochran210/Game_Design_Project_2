@@ -15,10 +15,10 @@ key_mine = keyboard_check(ord("2"));
 key_sword = keyboard_check(ord("3"));
 key_bow = keyboard_check(ord("4"));
 
-if(key_base){ playerState = "base";}
-if(key_mine){ playerState = "mine";}
-if(key_sword){ playerState = "sword";}
-if(key_bow){ playerState = "bow";}
+if(key_base){ obj_controller.player_state = "base";}
+if(key_mine){ obj_controller.player_state = "mine";}
+if(key_sword){ obj_controller.player_state = "sword";}
+if(key_bow){ obj_controller.player_state = "bow";}
 
 //Sprites
 if (movement != 0){
@@ -28,7 +28,7 @@ if (place_meeting(x, y + 1, obj_block)){
 	if (movement != 0){
 		//player walking
 		sprite_index = spr_player;
-	} else if (mouse_check_button_pressed(mb_left) && (playerState = "sword")){
+	} else if (mouse_check_button_pressed(mb_left) && (obj_controller.player_state = "sword")){
 		//player sword attack
 		sprite_index = spr_player_sword_attack;
 	} else {
@@ -63,13 +63,13 @@ if(place_meeting(x, y + y_spd, obj_block)){
 
 if(sprite_index = spr_player_sword_attack){
 	if(place_meeting(x - 64, y, obj_enemySlime)){
-		player_health -= 1;
+		obj_controller.player_health -= 1;
 		x -= 5;
 		y -= 5;
 	}
 } else {
 	if(place_meeting(x, y, obj_enemySlime)){
-		player_health -= 1;
+		obj_controller.player_health -= 1;
 		x -= 5;
 		y -= 5;
 	}
@@ -87,7 +87,7 @@ if(mouse_check_button_pressed(mb_left)){
 }
 
 //Attacking
-if(playerState = "bow"){
+if(obj_controller.player_state = "bow"){
 	if(mouse_check_button_pressed(mb_left)){
 		counter = 0;
 	}
@@ -115,7 +115,7 @@ if(playerState = "bow"){
 	}
 }
 
-if(playerState = "sword"){
+if(obj_controller.player_state = "sword"){
 	if(mouse_check_button_pressed(mb_left)){
 		with instance_create_depth(x, y, 0, obj_swordHitBox){
 			image_xscale = obj_player.image_xscale;

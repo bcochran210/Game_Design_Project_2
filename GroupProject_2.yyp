@@ -591,6 +591,14 @@
             }
         },
         {
+            "Key": "956f3c91-c8b3-4c38-a139-5f09252ea192",
+            "Value": {
+                "id": "de08bbe8-3838-4206-87ab-9963b38fa810",
+                "resourcePath": "sprites\\spr_bounds\\spr_bounds.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "961803d6-5e68-43f6-b38f-396c3094efcb",
             "Value": {
                 "id": "afa89387-050e-427b-8891-f45394baf908",
@@ -815,6 +823,14 @@
             }
         },
         {
+            "Key": "c991569f-18b1-4416-a52b-642586e64b4e",
+            "Value": {
+                "id": "683ec25e-e3a7-4680-a07a-63a30272c0a8",
+                "resourcePath": "objects\\obj_bounds\\obj_bounds.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "b79218e9-29f0-41fa-8f3a-0b04c6f9291d",
@@ -828,6 +844,14 @@
                 "id": "02db54b5-cda2-4245-884c-1acdd39edb62",
                 "resourcePath": "sprites\\spr_coalPickUp\\spr_coalPickUp.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ce773d90-c919-49ec-9a1a-60eb76b0abf6",
+            "Value": {
+                "id": "2b3eb4b7-87ed-4ddd-9279-2b5bda47c6fe",
+                "resourcePath": "objects\\obj_bossSlime\\obj_bossSlime.yy",
+                "resourceType": "GMObject"
             }
         },
         {
