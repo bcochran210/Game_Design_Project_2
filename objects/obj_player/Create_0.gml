@@ -9,3 +9,5 @@ counter = 0;
 arrow_drawn = true;
 charge_level = "0";
 canTakeDamage = true;
+block_in_hand = "dirt";
+block_to_place = obj_dirt;

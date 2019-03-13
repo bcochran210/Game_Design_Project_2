@@ -1,4 +1,5 @@
 //Drops
+obj_controller.enemy_death_count++;
 dropRate = irandom_range(1, 3);
 dropAmount = irandom_range(1, 10);
 if(dropRate = 1){

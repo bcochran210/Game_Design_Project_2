@@ -5,6 +5,7 @@ draw_text(x_view + 16, y_view + 550, "State: " + obj_controller.player_state);
 draw_text(x_view + 16, y_view + 575, "Sword Material: " + obj_controller.sword_material);
 draw_text(x_view + 16, y_view + 600, "Pickaxe Material: " + obj_controller.axe_material);
 draw_text(x_view + 700, y_view + 550, "Blocks Held:");
+draw_text(x_view + 700, y_view + 525, "Block in Hand: " + string(obj_player.block_in_hand));
 draw_text(x_view + 700, y_view + 575, "Dirt: " + string_digits(obj_controller.dirt_block_held));
 draw_text(x_view + 700, y_view + 600, "Stone: " + string_digits(obj_controller.stone_block_held));
 draw_text(x_view + 700, y_view + 625, "Log: " + string_digits(obj_controller.log_block_held));
@@ -25,5 +26,6 @@ if(player_state = "bow"){
 draw_healthbar(x_view + 16, y_view + 700, x_view + 1000, y_view + 725, player_health, c_black, c_red, c_green, 0, false, false);
 
 //Time of Day
-draw_text(x_view + 16, y_view + 500, "Time of Day: " + obj_controller.time_of_day);
-draw_text(x_view + 16, y_view + 525, "Days: " + string_digits(obj_controller.num_of_days));
+draw_text(x_view + 16, y_view + 475, "Time of Day: " + obj_controller.time_of_day);
+draw_text(x_view + 16, y_view + 500, "Days: " + string_digits(obj_controller.num_of_days));
+draw_text(x_view + 16, y_view + 525, "Daylight Remaining: " + string_digits(time_in_day / 10000));

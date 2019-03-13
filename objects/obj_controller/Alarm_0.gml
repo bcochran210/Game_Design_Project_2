@@ -1,2 +1,4 @@
 time_of_day = "night";
-alarm[1] = 1800;
+if(instance_exists(obj_enemySpawner)){
+	obj_enemySpawner.alarm[0] = 100;
+}

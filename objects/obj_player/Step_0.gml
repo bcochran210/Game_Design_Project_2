@@ -61,6 +61,77 @@ if(place_meeting(x, y + y_spd, obj_block)){
 	y_spd = 0;
 }
 
+/*COAL*/
+if(place_meeting(x + x_spd, y, obj_ore_coal)){
+	while(!place_meeting(x + sign(x_spd), y, obj_ore_coal)){
+		x += sign(x_spd);
+	}
+	x_spd = 0;
+}
+
+if(place_meeting(x, y + y_spd, obj_ore_coal)){
+	while(!place_meeting(x, y + y_spd, obj_ore_coal)){
+		y += sign(y_spd);
+	}
+	y_spd = 0;
+}
+/*COPPER*/
+if(place_meeting(x + x_spd, y, obj_ore_copper)){
+	while(!place_meeting(x + sign(x_spd), y, obj_ore_copper)){
+		x += sign(x_spd);
+	}
+	x_spd = 0;
+}
+
+if(place_meeting(x, y + y_spd, obj_ore_coal)){
+	while(!place_meeting(x, y + y_spd, obj_ore_coal)){
+		y += sign(y_spd);
+	}
+	y_spd = 0;
+}
+/*IRON*/
+if(place_meeting(x + x_spd, y, obj_ore_iron)){
+	while(!place_meeting(x + sign(x_spd), y, obj_ore_iron)){
+		x += sign(x_spd);
+	}
+	x_spd = 0;
+}
+
+if(place_meeting(x, y + y_spd, obj_ore_iron)){
+	while(!place_meeting(x, y + y_spd, obj_ore_iron)){
+		y += sign(y_spd);
+	}
+	y_spd = 0;
+}
+/*GOLD*/
+if(place_meeting(x + x_spd, y, obj_ore_gold)){
+	while(!place_meeting(x + sign(x_spd), y, obj_ore_gold)){
+		x += sign(x_spd);
+	}
+	x_spd = 0;
+}
+
+if(place_meeting(x, y + y_spd, obj_ore_gold)){
+	while(!place_meeting(x, y + y_spd, obj_ore_gold)){
+		y += sign(y_spd);
+	}
+	y_spd = 0;
+}
+/*DIAMOND*/
+if(place_meeting(x + x_spd, y, obj_ore_diamond)){
+	while(!place_meeting(x + sign(x_spd), y, obj_ore_diamond)){
+		x += sign(x_spd);
+	}
+	x_spd = 0;
+}
+
+if(place_meeting(x, y + y_spd, obj_ore_diamond)){
+	while(!place_meeting(x, y + y_spd, obj_ore_diamond)){
+		y += sign(y_spd);
+	}
+	y_spd = 0;
+}
+
 if(sprite_index = spr_player_sword_attack){
 	if(place_meeting(x - 64, y, obj_enemySlime)){
 		obj_controller.player_health -= 1;
@@ -117,26 +188,50 @@ if(obj_controller.player_state = "bow"){
 
 if(obj_controller.player_state = "sword"){
 	if(mouse_check_button_pressed(mb_left)){
-		with instance_create_depth(x, y, 0, obj_swordHitBox){
-			image_xscale = obj_player.image_xscale;
-		}
+		hb = instance_create_depth(x, y, 0, obj_swordHitBox)
+		hb.image_xscale = obj_player.image_xscale;
 	}
 }
 
 //Place Blocks
-if(mouse_check_button_pressed(mb_right) && place_free(mouse_x + 32, mouse_y + 32) 
-	&& obj_controller.dirt_block_held > 0){
-	var place_block_x = (floor(mouse_x/64)*64);
-	var place_block_y = (floor(mouse_y/64)*64);
-	with instance_create_depth(place_block_x, place_block_y, 0, obj_dirt){
-		if(!place_meeting(x + 64, y, obj_dirt) && !place_meeting(x - 1, y, obj_dirt) 
-			&& !place_meeting(x, y + 64, obj_dirt) && !place_meeting(x, y - 1, obj_dirt)){
-			instance_destroy();	
-		}
-	}
-	obj_controller.dirt_block_held--;
+if(mouse_wheel_down() && block_to_place = obj_dirt){
+	block_in_hand = "stone";
+	block_to_place = obj_stone;
+} else if (mouse_wheel_down() && block_to_place = obj_stone){
+	block_in_hand = "log";
+	block_to_place = obj_log;
+} else if (mouse_wheel_down() && block_to_place = obj_log){
+	block_in_hand = "dirt";
+	block_to_place = obj_dirt;
 }
 
+/*Fix this*/
+if(block_in_hand = "dirt"){
+	if(mouse_check_button_pressed(mb_right) && place_free(mouse_x + 32, mouse_y + 32) 
+		&& obj_controller.dirt_block_held > 0){
+		var place_block_x = (floor(mouse_x/64)*64);
+		var place_block_y = (floor(mouse_y/64)*64);
+		with instance_create_depth(place_block_x, place_block_y, 0, block_to_place){
+			if(!place_meeting(x + 64, y, obj_block) && !place_meeting(x - 1, y, obj_block) 
+				&& !place_meeting(x, y + 64, obj_block) && !place_meeting(x, y - 1, obj_block)){
+				instance_destroy();	
+			}
+		}
+		if(block_to_place = obj_dirt){
+			obj_controller.dirt_block_held--;
+		}
+	}
+} else if (block_in_hand = "stone"){
+	
+	if (block_to_place = obj_stone){
+		obj_controller.stone_block_held--;
+	} 
+} else if (block_in_hand = "log"){
+	
+	if (block_to_place = obj_log){
+		obj_controller.log_block_held--;
+	}
+}
 //Developer Keys
 /*Restart Game*/
 if(keyboard_check_pressed(ord("R"))){
