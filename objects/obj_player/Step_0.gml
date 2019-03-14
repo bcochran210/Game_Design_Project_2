@@ -236,7 +236,7 @@ if(obj_controller.player_state = "bow"){
 		sprite_index = spr_player_bow_fire;
 		counter ++;
 	} 
-	if(mouse_check_button_released(mb_left) && arrow_drawn && obj_controller.arrow_count > 0){
+	if(mouse_check_button_released(mb_left) && arrow_drawn && control.stored[item.arrows] > 0){
 		with instance_create_depth(x, y, 0, obj_arrow){
 			if(other.counter / room_speed) < 0 {
 				speed = 10;
@@ -252,7 +252,7 @@ if(obj_controller.player_state = "bow"){
 			}
 		}
 		arrow_drawn = false;
-		obj_controller.arrow_count --;
+		control.stored[item.arrows] --;
 		alarm[0] = 30;
 		sprite_index = spr_player_bow_idle;
 	}
@@ -282,7 +282,7 @@ if(mouse_wheel_down() && block_to_place = obj_dirt){
 /*Fix this*/
 if(block_in_hand = "dirt"){
 	if(mouse_check_button_pressed(mb_right) && place_free(mouse_x + 32, mouse_y + 32) 
-		&& obj_controller.dirt_block_held > 0){
+		&& control.stored[item.dirt] > 0){
 		var place_block_x = (floor(mouse_x/64)*64);
 		var place_block_y = (floor(mouse_y/64)*64);
 		with instance_create_depth(place_block_x, place_block_y, 0, block_to_place){
@@ -292,13 +292,13 @@ if(block_in_hand = "dirt"){
 			}
 		}
 		if(block_to_place = obj_dirt){
-			obj_controller.dirt_block_held--;
+			control.stored[item.dirt]--;
 			//controller.stored{item.dirt}--;
 		}
 	}
 } else if (block_in_hand = "stone"){
 	if(mouse_check_button_pressed(mb_right) && place_free(mouse_x + 32, mouse_y + 32) 
-		&& obj_controller.stone_block_held > 0){
+		&& control.stored[item.stone] > 0){
 		var place_block_x = (floor(mouse_x/64)*64);
 		var place_block_y = (floor(mouse_y/64)*64);
 		with instance_create_depth(place_block_x, place_block_y, 0, block_to_place){
@@ -308,12 +308,12 @@ if(block_in_hand = "dirt"){
 			}
 		}
 		if (block_to_place = obj_stone){
-			obj_controller.stone_block_held--;
+			control.stored[item.stone]--;
 		} 
 	}
 } else if (block_in_hand = "log"){
 	if(mouse_check_button_pressed(mb_right) && place_free(mouse_x + 32, mouse_y + 32) 
-		&& obj_controller.log_block_held > 0){
+		&& control.stored[item.wood] > 0){
 		var place_block_x = (floor(mouse_x/64)*64);
 		var place_block_y = (floor(mouse_y/64)*64);
 		with instance_create_depth(place_block_x, place_block_y, 0, block_to_place){
@@ -323,7 +323,7 @@ if(block_in_hand = "dirt"){
 			}
 		}
 		if (block_to_place = obj_log){
-			obj_controller.log_block_held--;
+			control.stored[item.wood]--;
 		}	
 	}
 }

@@ -1,3 +1,2 @@
 instance_destroy(self);
-		
-obj_controller.coal_ore_held++;
+control.stored[item.coal]++

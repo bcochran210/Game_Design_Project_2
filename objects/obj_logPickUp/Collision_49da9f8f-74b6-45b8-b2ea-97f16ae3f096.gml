@@ -1,4 +1,4 @@
 instance_destroy(self);
 		
-obj_controller.log_block_held++;
+control.stored[item.wood]++;
 

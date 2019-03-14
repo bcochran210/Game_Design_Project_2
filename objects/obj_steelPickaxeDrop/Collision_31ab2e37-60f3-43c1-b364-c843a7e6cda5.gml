@@ -2,6 +2,7 @@ instance_destroy();
 
 if(obj_controller.axe_material = "wood" || obj_controller.axe_material = "copper"){
 	obj_controller.axe_material = "steel";
+	control.picklvl = 2;
 } else {
-	obj_controller.iron_ore_held += 3;
+	control.stored[item.iron] += 3;
 }

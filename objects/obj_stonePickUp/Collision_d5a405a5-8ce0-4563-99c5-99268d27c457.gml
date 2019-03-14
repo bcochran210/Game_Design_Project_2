@@ -1,3 +1,3 @@
 instance_destroy(self);
 
-obj_controller.stone_block_held++;
+control.stored[item.stone]++;

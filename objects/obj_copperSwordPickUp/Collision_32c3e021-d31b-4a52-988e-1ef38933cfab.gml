@@ -2,6 +2,7 @@ instance_destroy();
 
 if(obj_controller.sword_material = "wood"){
 	obj_controller.sword_material = "copper";
+	control.swordlvl = 1;
 } else {
-	obj_controller.copper_ore_held += 3;
+	control.stored[item.copper] += 3;
 }

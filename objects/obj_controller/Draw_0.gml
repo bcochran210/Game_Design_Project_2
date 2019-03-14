@@ -6,19 +6,19 @@ draw_text(x_view + 16, y_view + 575, "Sword Material: " + obj_controller.sword_m
 draw_text(x_view + 16, y_view + 600, "Pickaxe Material: " + obj_controller.axe_material);
 draw_text(x_view + 700, y_view + 550, "Blocks Held:");
 draw_text(x_view + 700, y_view + 525, "Block in Hand: " + string(obj_player.block_in_hand));
-draw_text(x_view + 700, y_view + 575, "Dirt: " + string_digits(obj_controller.dirt_block_held));
-draw_text(x_view + 700, y_view + 600, "Stone: " + string_digits(obj_controller.stone_block_held));
-draw_text(x_view + 700, y_view + 625, "Log: " + string_digits(obj_controller.log_block_held));
+draw_text(x_view + 700, y_view + 575, "Dirt: " + string_digits(control.stored[item.dirt]));
+draw_text(x_view + 700, y_view + 600, "Stone: " + string_digits(control.stored[item.stone]));
+draw_text(x_view + 700, y_view + 625, "Log: " + string_digits(control.stored[item.wood]));
 draw_text(x_view + 550, y_view + 550, "Ores Held:");
-draw_text(x_view + 550, y_view + 575, "Coal: " + string_digits(obj_controller.coal_ore_held));
-draw_text(x_view + 550, y_view + 600, "Copper: " + string_digits(obj_controller.copper_ore_held));
-draw_text(x_view + 550, y_view + 625, "Iron: " + string_digits(obj_controller.iron_ore_held));
-draw_text(x_view + 550, y_view + 650, "Gold: " + string_digits(obj_controller.gold_ore_held));
-draw_text(x_view + 550, y_view + 675, "Diamond: " + string_digits(obj_controller.diamond_ore_held));
+draw_text(x_view + 550, y_view + 575, "Coal: " + string_digits(control.stored[item.coal]));
+draw_text(x_view + 550, y_view + 600, "Copper: " + string_digits(control.stored[item.copper]));
+draw_text(x_view + 550, y_view + 625, "Iron: " + string_digits(control.stored[item.iron]));
+draw_text(x_view + 550, y_view + 650, "Gold: " + string_digits(control.stored[item.gold]));
+draw_text(x_view + 550, y_view + 675, "Diamond: " + string_digits(control.stored[item.diamond]));
 
 
 if(player_state = "bow"){
-	draw_text(x_view + 16, y_view + 650, "Arrows: " + string_digits(obj_controller.arrow_count));
+	draw_text(x_view + 16, y_view + 650, "Arrows: " + string_digits(control.stored[item.arrows]));
 	draw_text(x_view + 16, y_view + 675, "Drawn: " + string(obj_player.arrow_drawn));
 }
 
