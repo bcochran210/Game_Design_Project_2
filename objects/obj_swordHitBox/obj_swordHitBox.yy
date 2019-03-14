@@ -5,13 +5,23 @@
     "name": "obj_swordHitBox",
     "eventList": [
         {
-            "id": "66334597-3873-416d-90c5-367a1f566981",
+            "id": "182c7527-b52e-49dc-985b-099660f82d53",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 77,
-            "eventtype": 8,
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "02d3f64d-eb0e-46fc-8db6-eab432273b7f"
+        },
+        {
+            "id": "43cfb517-e274-402b-8ef7-fea409e9c132",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 2,
             "m_owner": "02d3f64d-eb0e-46fc-8db6-eab432273b7f"
         }
     ],

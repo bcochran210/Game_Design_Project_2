@@ -20,4 +20,5 @@ switch obj_controller.sword_material {
 		break;
 	}
 }
+audio_play_sound(Sfx_EnemyDeath, 0, 0);
 instance_destroy(other);

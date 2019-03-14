@@ -27,7 +27,11 @@ if (movement != 0){
 if (place_meeting(x, y + 1, obj_block)){
 	if (movement != 0){
 		//player walking
-		sprite_index = spr_player;
+		if(obj_controller.player_state = "bow"){
+			sprite_index = spr_player_bow_idle;
+		} else {
+			sprite_index = spr_player;
+		}
 	} else if (mouse_check_button(mb_left) && (obj_controller.player_state = "sword")){
 		//player sword attack
 		if(obj_controller.sword_material = "wood"){
@@ -63,7 +67,11 @@ if (place_meeting(x, y + 1, obj_block)){
 		}
 	} else {
 		//player idle
-		sprite_index = spr_player;
+		if(obj_controller.player_state = "bow"){
+			sprite_index = spr_player_bow_idle;
+		} else {
+			sprite_index = spr_player;
+		}
 	}
 } else {
 	if (y_spd < 0){
@@ -165,13 +173,13 @@ if(place_meeting(x, y + y_spd, obj_ore_diamond)){
 if(sprite_index = spr_player_sword_attack || sprite_index = spr_player_sword_attack_copper
 	|| sprite_index = spr_player_sword_attack_diamond || sprite_index = spr_player_sword_attack_gold 
 	|| sprite_index = spr_player_sword_attack_steel){
-	if(movement < 0){
+	if(image_xscale < 0){
 		if(place_meeting(x + 64, y, obj_enemySlime)){
 			obj_controller.player_health -= 1;
 			x -= 5;
 			y -= 5;
 		}
-	} else if (movement > 0){
+	} else if (image_xscale > 0){
 		if(place_meeting(x - 64, y, obj_enemySlime)){
 			obj_controller.player_health -= 1;
 			x += 5;
@@ -181,8 +189,13 @@ if(sprite_index = spr_player_sword_attack || sprite_index = spr_player_sword_att
 } else {
 	if(place_meeting(x, y, obj_enemySlime)){
 		obj_controller.player_health -= 1;
-		x -= 5;
-		y -= 5;
+		if(image_xscale < 0){
+			x -= 5;
+			y -= 5;
+		} else if (image_xscale > 0){
+			x += 5;
+			y -= 5;
+		}
 	}
 }
 
@@ -207,6 +220,7 @@ if(obj_controller.player_state = "bow"){
 		counter = 0;
 	}
 	if(mouse_check_button(mb_left)){
+		sprite_index = spr_player_bow_fire;
 		counter ++;
 	} 
 	if(mouse_check_button_released(mb_left) && arrow_drawn && obj_controller.arrow_count > 0){
@@ -227,12 +241,14 @@ if(obj_controller.player_state = "bow"){
 		arrow_drawn = false;
 		obj_controller.arrow_count --;
 		alarm[0] = 30;
+		sprite_index = spr_player_bow_idle;
 	}
 }
 
 if(obj_controller.player_state = "sword" && (sprite_index = spr_player_sword_attack || sprite_index = spr_player_sword_attack_copper
 	|| sprite_index = spr_player_sword_attack_diamond || sprite_index = spr_player_sword_attack_gold || sprite_index = spr_player_sword_attack_steel)){
-	if(image_index = 4){
+	if(image_index = 3){
+		audio_play_sound(Sfx_SwingingMiss, 0, 0);
 		hb = instance_create_depth(x, y, 0, obj_swordHitBox)
 		hb.image_xscale = obj_player.image_xscale;
 	}
