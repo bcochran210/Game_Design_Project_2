@@ -1,4 +1,5 @@
 //Player input
+if(!obj_controller.pause_game){
 key_right = keyboard_check(ord("A"));
 key_left = keyboard_check(ord("D"));
 key_up = keyboard_check(ord("W"));
@@ -99,6 +100,21 @@ if(place_meeting(x, y + y_spd, obj_block)){
 	y_spd = 0;
 }
 
+/*BEDROCK*/
+if(place_meeting(x + x_spd, y, obj_bedrock)){
+	while(!place_meeting(x + sign(x_spd), y, obj_bedrock)){
+		x += sign(x_spd);
+	}
+	x_spd = 0;
+}
+
+if(place_meeting(x, y + y_spd, obj_bedrock)){
+	while(!place_meeting(x, y + sign(y_spd), obj_bedrock)){
+		y += sign(y_spd);
+	}
+	y_spd = 0;
+}
+
 /*COAL*/
 if(place_meeting(x + x_spd, y, obj_ore_coal)){
 	while(!place_meeting(x + sign(x_spd), y, obj_ore_coal)){
@@ -172,30 +188,27 @@ if(place_meeting(x, y + y_spd, obj_ore_diamond)){
 
 if(sprite_index = spr_player_sword_attack || sprite_index = spr_player_sword_attack_copper
 	|| sprite_index = spr_player_sword_attack_diamond || sprite_index = spr_player_sword_attack_gold 
-	|| sprite_index = spr_player_sword_attack_steel){
+	|| sprite_index = spr_player_sword_attack_steel || sprite_index = spr_player_mine || sprite_index = spr_player_mine_copper
+	|| sprite_index = spr_player_mine_diamond || sprite_index = spr_player_mine_gold 
+	|| sprite_index = spr_player_mine_steel){
 	if(image_xscale < 0){
-		if(place_meeting(x + 64, y, obj_enemySlime)){
+		if(place_meeting(x + 64, y, obj_enemySlime) && canTakeDamage = true){
 			obj_controller.player_health -= 1;
-			x -= 5;
-			y -= 5;
+			canTakeDamage = false;
+			alarm[1] = 10;
 		}
 	} else if (image_xscale > 0){
-		if(place_meeting(x - 64, y, obj_enemySlime)){
+		if(place_meeting(x - 64, y, obj_enemySlime) && canTakeDamage = true){
 			obj_controller.player_health -= 1;
-			x += 5;
-			y -= 5;
+			canTakeDamage = false;
+			alarm[1] = 10;
 		}
 	}
 } else {
-	if(place_meeting(x, y, obj_enemySlime)){
+	if(place_meeting(x, y, obj_enemySlime) && canTakeDamage = true){
 		obj_controller.player_health -= 1;
-		if(image_xscale < 0){
-			x -= 5;
-			y -= 5;
-		} else if (image_xscale > 0){
-			x += 5;
-			y -= 5;
-		}
+		canTakeDamage = false;
+		alarm[1] = 10;
 	}
 }
 
@@ -324,3 +337,4 @@ if(keyboard_check_pressed(ord("R"))){
 //Update movement
 x += x_spd;
 y += y_spd;
+}

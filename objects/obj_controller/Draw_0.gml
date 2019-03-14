@@ -29,3 +29,8 @@ draw_healthbar(x_view + 16, y_view + 700, x_view + 1000, y_view + 725, player_he
 draw_text(x_view + 16, y_view + 475, "Time of Day: " + obj_controller.time_of_day);
 draw_text(x_view + 16, y_view + 500, "Days: " + string_digits(obj_controller.num_of_days));
 draw_text(x_view + 16, y_view + 525, "Daylight Remaining: " + string_digits(time_in_day / 10000));
+
+//Pausing
+if(pause_game){
+	draw_sprite(spr_pause, 0, x_view, y_view);
+}
