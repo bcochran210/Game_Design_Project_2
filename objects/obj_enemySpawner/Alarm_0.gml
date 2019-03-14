@@ -1,7 +1,7 @@
 randomize();
 spawn_rare_slime = irandom_range(1, 10);
 var s = spawn_rare_slime;
-if(obj_controller.time_of_day = "night" && instance_exists(obj_player)){
+if(obj_controller.time_of_day = "night"){
 	if (s = 10) {
 		instance_create_depth(x, y, 0, obj_enemySlimeSR);
 	} else if (s = 9 || s = 8) {

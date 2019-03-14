@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "024349fa-c783-4ae6-b682-93923a61074b",
+            "Value": {
+                "id": "be22c91a-5409-4681-9a67-1e70450b2619",
+                "resourcePath": "sprites\\spr_player_sword_attack_gold\\spr_player_sword_attack_gold.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "02d3f64d-eb0e-46fc-8db6-eab432273b7f",
             "Value": {
                 "id": "2c3739dc-0cfa-4f54-b0d0-3afccd5277e0",
@@ -75,6 +83,14 @@
             "Value": {
                 "id": "aa1579f8-0692-470b-9bbe-63eaced8e813",
                 "resourcePath": "sprites\\spr_dirt\\spr_dirt.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "057b6549-dd57-42e0-9b17-b5d8ee26461e",
+            "Value": {
+                "id": "a429f13d-a811-45c7-a62a-cd0b0100606f",
+                "resourcePath": "sprites\\spr_player_sword_attack_copper\\spr_player_sword_attack_copper.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -171,6 +187,14 @@
             "Value": {
                 "id": "fff7e1c7-de81-4396-a246-652dc13df7ef",
                 "resourcePath": "sprites\\spr_steelPickaxeDrop\\spr_steelPickaxeDrop.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "15318589-0d0b-4888-be4d-882447fd60b6",
+            "Value": {
+                "id": "3f51815d-d9a3-4672-bec1-c01e1963dad8",
+                "resourcePath": "sprites\\spr_player_mine_gold\\spr_player_mine_gold.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -431,6 +455,14 @@
             }
         },
         {
+            "Key": "63313845-abf4-4d82-8c74-a341eaadeb43",
+            "Value": {
+                "id": "decabc1d-da66-45d4-97c5-f1e81fbd0e28",
+                "resourcePath": "sprites\\spr_player_mine_diamond\\spr_player_mine_diamond.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "645ee687-59e0-4dcf-8134-a74786e264b9",
             "Value": {
                 "id": "6446e714-4698-4011-ba5a-43651ac8ea4e",
@@ -443,6 +475,14 @@
             "Value": {
                 "id": "fa0e63b1-e489-4316-8476-0dd1c5d508f2",
                 "resourcePath": "sprites\\spr_player_sword_hitbox\\spr_player_sword_hitbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "656b218a-d7a0-4ba1-a462-d6b611adaf3b",
+            "Value": {
+                "id": "d52b0059-f356-4c6b-a9e6-aae144213c1e",
+                "resourcePath": "sprites\\spr_player_sword_attack_steel\\spr_player_sword_attack_steel.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -468,6 +508,14 @@
                 "id": "5a65ca63-e423-428d-9577-3eb597395937",
                 "resourcePath": "views\\671cc548-496e-4b1b-947c-064383f6ab3b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6bc5a7b1-9ca9-42bf-93f1-c790c7440a23",
+            "Value": {
+                "id": "b8a57bae-9e21-4893-8299-888d0560336b",
+                "resourcePath": "sprites\\spr_player_mine_steel\\spr_player_mine_steel.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -535,6 +583,14 @@
             }
         },
         {
+            "Key": "8042ba62-d51f-4102-9e2d-1ea2625f12db",
+            "Value": {
+                "id": "078f2041-fef5-417b-975c-61f6b6bcb033",
+                "resourcePath": "views\\8042ba62-d51f-4102-9e2d-1ea2625f12db.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "81d3d5fe-3d7d-4cee-ac76-ce0f400ac9e4",
             "Value": {
                 "id": "7cff914a-b951-4a03-958a-b76b69e2282d",
@@ -575,11 +631,27 @@
             }
         },
         {
+            "Key": "8937f435-3742-4603-9718-96b744f90a7f",
+            "Value": {
+                "id": "ab42ad53-66dc-4c94-950d-61bdbf36778b",
+                "resourcePath": "sprites\\spr_player_mine\\spr_player_mine.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8a82d147-7e44-4e4b-8eae-75ef79374f15",
             "Value": {
                 "id": "d39600ef-b1d3-47b3-a68e-aa3c69a76491",
                 "resourcePath": "views\\8a82d147-7e44-4e4b-8eae-75ef79374f15.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8b588eb6-17ed-4a4e-af93-cd095e6ec552",
+            "Value": {
+                "id": "841f51cd-3d60-46f2-8780-f01e5343a18b",
+                "resourcePath": "sprites\\spr_sword\\spr_sword.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -727,6 +799,14 @@
             }
         },
         {
+            "Key": "aee3d76e-9ba0-4d5f-b0d7-acc9f0fb2843",
+            "Value": {
+                "id": "ea6501ba-ceff-419d-928f-ebed5736d078",
+                "resourcePath": "sprites\\spr_player_fall\\spr_player_fall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b1d0e051-bbfe-4ecb-bbc1-86055526d104",
             "Value": {
                 "id": "81c32cc4-3205-416c-8d9d-45f890902698",
@@ -847,6 +927,14 @@
             }
         },
         {
+            "Key": "c48cd175-6c53-4620-990d-e75f188ab601",
+            "Value": {
+                "id": "4faf38a2-9246-4880-8c8c-8fa747527c93",
+                "resourcePath": "sprites\\spr_player_mine_copper\\spr_player_mine_copper.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c78ade01-b8b6-4e1c-8e86-df532cf336fd",
             "Value": {
                 "id": "d023cd31-a10e-4f08-a233-0c6f4a39d97b",
@@ -868,6 +956,14 @@
                 "id": "b79218e9-29f0-41fa-8f3a-0b04c6f9291d",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "cd1b1332-f5fd-44ee-887a-3e0a16815d1a",
+            "Value": {
+                "id": "74954e9a-7a90-4198-96f6-476a436efba6",
+                "resourcePath": "sprites\\spr_pickaxe\\spr_pickaxe.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -943,6 +1039,14 @@
             }
         },
         {
+            "Key": "ea521485-6ebd-4257-ac0a-e5ef9716e0a6",
+            "Value": {
+                "id": "6d3de93e-9ad1-4ba8-aab3-b1fda2a79625",
+                "resourcePath": "sprites\\spr_player_jump\\spr_player_jump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ebd31d4c-8166-4961-a851-de11b67a04ea",
             "Value": {
                 "id": "b4a19a2f-466c-4958-8ea8-fed8418c7c27",
@@ -1003,6 +1107,14 @@
             "Value": {
                 "id": "8ef1a99e-b2d3-4f22-9ac5-d4eb13bc129b",
                 "resourcePath": "sprites\\Night_Background\\Night_Background.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fae9a0f2-2d0f-4ec9-84d1-08b2c9383b27",
+            "Value": {
+                "id": "daa8c44d-877a-4c2e-a499-31748a07b298",
+                "resourcePath": "sprites\\spr_player_sword_attack_diamond\\spr_player_sword_attack_diamond.yy",
                 "resourceType": "GMSprite"
             }
         },

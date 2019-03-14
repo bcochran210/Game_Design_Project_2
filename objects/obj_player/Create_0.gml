@@ -1,4 +1,4 @@
-ax_spd = 0;
+x_spd = 0;
 y_spd = 0;
 walkSpd = 5;
 jumpSpd = 15;

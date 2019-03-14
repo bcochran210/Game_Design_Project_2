@@ -28,9 +28,39 @@ if (place_meeting(x, y + 1, obj_block)){
 	if (movement != 0){
 		//player walking
 		sprite_index = spr_player;
-	} else if (mouse_check_button_pressed(mb_left) && (obj_controller.player_state = "sword")){
+	} else if (mouse_check_button(mb_left) && (obj_controller.player_state = "sword")){
 		//player sword attack
-		sprite_index = spr_player_sword_attack;
+		if(obj_controller.sword_material = "wood"){
+			sprite_index = spr_player_sword_attack;
+		}
+		if(obj_controller.sword_material = "copper"){
+			sprite_index = spr_player_sword_attack_copper;
+		}
+		if(obj_controller.sword_material = "steel"){
+			sprite_index = spr_player_sword_attack_steel;
+		}
+		if(obj_controller.sword_material = "gold"){
+			sprite_index = spr_player_sword_attack_gold;
+		}
+		if(obj_controller.sword_material = "diamond"){
+			sprite_index = spr_player_sword_attack_diamond;
+		}
+	} else if (mouse_check_button(mb_left) && (obj_controller.player_state = "mine")){
+		if(obj_controller.axe_material = "wood"){
+			sprite_index = spr_player_mine;
+		}
+		if(obj_controller.axe_material = "copper"){
+			sprite_index = spr_player_mine_copper;
+		}
+		if(obj_controller.axe_material = "steel"){
+			sprite_index = spr_player_mine_steel;
+		}
+		if(obj_controller.axe_material = "gold"){
+			sprite_index = spr_player_mine_gold;
+		}
+		if(obj_controller.axe_material = "diamond"){
+			sprite_index = spr_player_mine_diamond;
+		}
 	} else {
 		//player idle
 		sprite_index = spr_player;
@@ -38,10 +68,10 @@ if (place_meeting(x, y + 1, obj_block)){
 } else {
 	if (y_spd < 0){
 		//player jump
-		sprite_index = spr_player;
+		sprite_index = spr_player_jump;
 	} else {
 		//player fall
-		sprite_index = spr_player;
+		sprite_index = spr_player_fall;
 	}
 }
 
@@ -55,7 +85,7 @@ if(place_meeting(x + x_spd, y, obj_block)){
 }
 
 if(place_meeting(x, y + y_spd, obj_block)){
-	while(!place_meeting(x, y + y_spd, obj_block)){
+	while(!place_meeting(x, y + sign(y_spd), obj_block)){
 		y += sign(y_spd);
 	}
 	y_spd = 0;
@@ -132,11 +162,21 @@ if(place_meeting(x, y + y_spd, obj_ore_diamond)){
 	y_spd = 0;
 }
 
-if(sprite_index = spr_player_sword_attack){
-	if(place_meeting(x - 64, y, obj_enemySlime)){
-		obj_controller.player_health -= 1;
-		x -= 5;
-		y -= 5;
+if(sprite_index = spr_player_sword_attack || sprite_index = spr_player_sword_attack_copper
+	|| sprite_index = spr_player_sword_attack_diamond || sprite_index = spr_player_sword_attack_gold 
+	|| sprite_index = spr_player_sword_attack_steel){
+	if(movement < 0){
+		if(place_meeting(x + 64, y, obj_enemySlime)){
+			obj_controller.player_health -= 1;
+			x -= 5;
+			y -= 5;
+		}
+	} else if (movement > 0){
+		if(place_meeting(x - 64, y, obj_enemySlime)){
+			obj_controller.player_health -= 1;
+			x += 5;
+			y -= 5;
+		}
 	}
 } else {
 	if(place_meeting(x, y, obj_enemySlime)){
@@ -147,14 +187,18 @@ if(sprite_index = spr_player_sword_attack){
 }
 
 //Jump
-if(place_meeting(x, y + 1, obj_block) && (key_up)){
+if(place_meeting(x, y + 1, obj_block) && (key_up) && !place_meeting(x, y - 1, obj_block)){
 	y_spd = -jumpSpd;
-}
+} 
 
 //Mining
-/*Located withing block code*/
-if(mouse_check_button_pressed(mb_left)){
-	instance_create_depth(mouse_x, mouse_y, 0, obj_miningHitBox);
+/*Located within block code*/
+if(obj_controller.player_state = "mine" && (sprite_index = spr_player_mine || sprite_index = spr_player_mine_copper
+	|| sprite_index = spr_player_mine_diamond || sprite_index = spr_player_mine_gold 
+	|| sprite_index = spr_player_mine_steel)){
+	if(image_index = 4){
+		instance_create_depth(mouse_x, mouse_y, 0, obj_miningHitBox);
+	}
 }
 
 //Attacking
@@ -186,8 +230,9 @@ if(obj_controller.player_state = "bow"){
 	}
 }
 
-if(obj_controller.player_state = "sword"){
-	if(mouse_check_button_pressed(mb_left)){
+if(obj_controller.player_state = "sword" && (sprite_index = spr_player_sword_attack || sprite_index = spr_player_sword_attack_copper
+	|| sprite_index = spr_player_sword_attack_diamond || sprite_index = spr_player_sword_attack_gold || sprite_index = spr_player_sword_attack_steel)){
+	if(image_index = 4){
 		hb = instance_create_depth(x, y, 0, obj_swordHitBox)
 		hb.image_xscale = obj_player.image_xscale;
 	}
@@ -203,7 +248,7 @@ if(mouse_wheel_down() && block_to_place = obj_dirt){
 } else if (mouse_wheel_down() && block_to_place = obj_log){
 	block_in_hand = "dirt";
 	block_to_place = obj_dirt;
-}
+} 
 
 /*Fix this*/
 if(block_in_hand = "dirt"){
@@ -219,19 +264,41 @@ if(block_in_hand = "dirt"){
 		}
 		if(block_to_place = obj_dirt){
 			obj_controller.dirt_block_held--;
+			//controller.stored{item.dirt}--;
 		}
 	}
 } else if (block_in_hand = "stone"){
-	
-	if (block_to_place = obj_stone){
-		obj_controller.stone_block_held--;
-	} 
+	if(mouse_check_button_pressed(mb_right) && place_free(mouse_x + 32, mouse_y + 32) 
+		&& obj_controller.stone_block_held > 0){
+		var place_block_x = (floor(mouse_x/64)*64);
+		var place_block_y = (floor(mouse_y/64)*64);
+		with instance_create_depth(place_block_x, place_block_y, 0, block_to_place){
+			if(!place_meeting(x + 64, y, obj_block) && !place_meeting(x - 1, y, obj_block) 
+				&& !place_meeting(x, y + 64, obj_block) && !place_meeting(x, y - 1, obj_block)){
+				instance_destroy();	
+			}
+		}
+		if (block_to_place = obj_stone){
+			obj_controller.stone_block_held--;
+		} 
+	}
 } else if (block_in_hand = "log"){
-	
-	if (block_to_place = obj_log){
-		obj_controller.log_block_held--;
+	if(mouse_check_button_pressed(mb_right) && place_free(mouse_x + 32, mouse_y + 32) 
+		&& obj_controller.log_block_held > 0){
+		var place_block_x = (floor(mouse_x/64)*64);
+		var place_block_y = (floor(mouse_y/64)*64);
+		with instance_create_depth(place_block_x, place_block_y, 0, block_to_place){
+			if(!place_meeting(x + 64, y, obj_block) && !place_meeting(x - 1, y, obj_block) 
+				&& !place_meeting(x, y + 64, obj_block) && !place_meeting(x, y - 1, obj_block)){
+				instance_destroy();	
+			}
+		}
+		if (block_to_place = obj_log){
+			obj_controller.log_block_held--;
+		}	
 	}
 }
+
 //Developer Keys
 /*Restart Game*/
 if(keyboard_check_pressed(ord("R"))){
