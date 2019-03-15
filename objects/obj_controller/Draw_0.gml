@@ -1,34 +1,21 @@
 var x_view = camera_get_view_x(view_camera[0]);
 var y_view = camera_get_view_y(view_camera[0]);
 
-draw_text(x_view + 16, y_view + 550, "State: " + obj_controller.player_state);
-draw_text(x_view + 16, y_view + 575, "Sword Material: " + obj_controller.sword_material);
-draw_text(x_view + 16, y_view + 600, "Pickaxe Material: " + obj_controller.axe_material);
-draw_text(x_view + 700, y_view + 550, "Blocks Held:");
-draw_text(x_view + 700, y_view + 525, "Block in Hand: " + string(obj_player.block_in_hand));
-draw_text(x_view + 700, y_view + 575, "Dirt: " + string_digits(control.stored[item.dirt]));
-draw_text(x_view + 700, y_view + 600, "Stone: " + string_digits(control.stored[item.stone]));
-draw_text(x_view + 700, y_view + 625, "Log: " + string_digits(control.stored[item.wood]));
-draw_text(x_view + 550, y_view + 550, "Ores Held:");
-draw_text(x_view + 550, y_view + 575, "Coal: " + string_digits(control.stored[item.coal]));
-draw_text(x_view + 550, y_view + 600, "Copper: " + string_digits(control.stored[item.copper]));
-draw_text(x_view + 550, y_view + 625, "Iron: " + string_digits(control.stored[item.iron]));
-draw_text(x_view + 550, y_view + 650, "Gold: " + string_digits(control.stored[item.gold]));
-draw_text(x_view + 550, y_view + 675, "Diamond: " + string_digits(control.stored[item.diamond]));
-
-
-if(player_state = "bow"){
-	draw_text(x_view + 16, y_view + 650, "Arrows: " + string_digits(control.stored[item.arrows]));
-	draw_text(x_view + 16, y_view + 675, "Drawn: " + string(obj_player.arrow_drawn));
+//Draw HUD
+if(time_of_day = "day"){
+	draw_sprite(spr_hud, 0, x_view, y_view);
+} else if (time_of_day = "night"){
+	draw_sprite(spr_hud_night, 0, x_view, y_view);
 }
 
 //Draw Health
-draw_healthbar(x_view + 16, y_view + 700, x_view + 1000, y_view + 725, player_health, c_black, c_red, c_green, 0, false, false);
+draw_healthbar(x_view + 353, y_view + 50, x_view + 676, y_view + 77, player_health, c_black, c_red, c_green, 0, false, false);
 
-//Time of Day
-draw_text(x_view + 16, y_view + 475, "Time of Day: " + obj_controller.time_of_day);
-draw_text(x_view + 16, y_view + 500, "Days: " + string_digits(obj_controller.num_of_days));
-draw_text(x_view + 16, y_view + 525, "Daylight Remaining: " + string_digits(time_in_day / 10000));
+//Days
+draw_set_font(font0);
+draw_set_color(c_green);
+draw_text(x_view + 16, y_view + 50, "Days: " + string_digits(obj_controller.num_of_days));
+draw_text(x_view + 16, y_view + 75, "Daylight Remaining: " + string_digits(time_in_day / 10000));
 
 //Pausing
 if(pause_game){

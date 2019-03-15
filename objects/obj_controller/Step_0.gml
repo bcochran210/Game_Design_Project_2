@@ -1,3 +1,6 @@
+
+
+
 //Daylight Counter
 if(time_in_day > 0){
 	time_in_day--;
@@ -63,8 +66,10 @@ if(keyboard_check_pressed(ord("P"))){
 if(keyboard_check_pressed(vk_tab)){
 	instance_destroy(obj_enemySlime);
 }
-if(keyboard_check_pressed(vk_shift) && keyboard_check_pressed(vk_tab)){
+if(keyboard_check(vk_shift) && keyboard_check(vk_tab)){
 	//win
+	instance_destroy(all);
+	room_goto(rm_game_win);
 }
 if(keyboard_check_pressed(vk_f2)){
 	num_of_days = 7;

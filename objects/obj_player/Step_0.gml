@@ -193,20 +193,32 @@ if(sprite_index = spr_player_sword_attack || sprite_index = spr_player_sword_att
 	|| sprite_index = spr_player_mine_steel){
 	if(image_xscale < 0){
 		if(place_meeting(x + 64, y, obj_enemySlime) && canTakeDamage = true){
-			obj_controller.player_health -= 1;
+			obj_controller.player_health -= 5;
+			canTakeDamage = false;
+			alarm[1] = 10;
+		} else if (place_meeting(x + 64, y, obj_bossSlime)){
+			obj_controller.player_health -= 10;
 			canTakeDamage = false;
 			alarm[1] = 10;
 		}
 	} else if (image_xscale > 0){
 		if(place_meeting(x - 64, y, obj_enemySlime) && canTakeDamage = true){
-			obj_controller.player_health -= 1;
+			obj_controller.player_health -= 5;
+			canTakeDamage = false;
+			alarm[1] = 10;
+		} else if (place_meeting(x - 64, y, obj_bossSlime)){
+			obj_controller.player_health -= 10;
 			canTakeDamage = false;
 			alarm[1] = 10;
 		}
 	}
 } else {
 	if(place_meeting(x, y, obj_enemySlime) && canTakeDamage = true){
-		obj_controller.player_health -= 1;
+		obj_controller.player_health -= 5;
+		canTakeDamage = false;
+		alarm[1] = 10;
+	} else if (place_meeting(x, y, obj_bossSlime)){
+		obj_controller.player_health -= 10;
 		canTakeDamage = false;
 		alarm[1] = 10;
 	}
@@ -279,7 +291,6 @@ if(mouse_wheel_down() && block_to_place = obj_dirt){
 	block_to_place = obj_dirt;
 } 
 
-/*Fix this*/
 if(block_in_hand = "dirt"){
 	if(mouse_check_button_pressed(mb_right) && place_free(mouse_x + 32, mouse_y + 32) 
 		&& control.stored[item.dirt] > 0){
@@ -293,7 +304,6 @@ if(block_in_hand = "dirt"){
 		}
 		if(block_to_place = obj_dirt){
 			control.stored[item.dirt]--;
-			//controller.stored{item.dirt}--;
 		}
 	}
 } else if (block_in_hand = "stone"){

@@ -5,5 +5,5 @@ if(obj_controller.axe_material = "wood" || obj_controller.axe_material = "copper
 	obj_controller.axe_material = "diamond";
 	control.picklvl = 4;
 } else {
-	obj_controller.diamond_ore_held += 3;
+	control.stored[item.diamond] += 3;
 }

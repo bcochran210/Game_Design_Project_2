@@ -10,6 +10,15 @@ if(place_meeting(x + x_spd, y, obj_block)){
 	dir *= -1;
 }
 
+if(place_meeting(x + x_spd, y, obj_bounds)){
+	while(!place_meeting(x + sign(x_spd), y, obj_bounds)){
+		x += sign(x_spd);
+	}
+	x_spd = 0;
+	
+	dir *= -1;
+}
+
 if(place_meeting(x, y + y_spd, obj_block)){
 	while(!place_meeting(x, y + y_spd, obj_block)){
 		y += sign(y_spd);

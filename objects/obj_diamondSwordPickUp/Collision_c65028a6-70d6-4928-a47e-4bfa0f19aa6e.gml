@@ -4,5 +4,5 @@ if(obj_controller.sword_material = "wood" || obj_controller.sword_material = "co
 	obj_controller.sword_material = "diamond";
 	control.swordlvl = 4;
 } else {
-	obj_controller.diamond_ore_held += 3;
+	control.stored[item.diamond] += 3;
 }
